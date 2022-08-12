@@ -1,0 +1,25 @@
+{% extends "base.html.twig"  %}
+
+{%block title%}Erreur 403 : accès interdit {%endblock%}
+
+{%block body%}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <h1 class="my-5">Oups !</h1>
+                <h3>Vous n'êtes pas autorisé à consulter cette page</h3>
+
+                <p class="erreur-type my-2">403</p>
+                <p class="erreur-text">Accès interdit</p>
+
+                <form method="GET" action="{{ path('main_home') }}" class="my-5 text-center">
+                    <button class="btn btn-back">Retour à l'accueil</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

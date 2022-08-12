@@ -1,0 +1,12 @@
+h2{
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+}
+
+.card-body h4{
+    font-family: 'KGSecondChancesSketch', sans-serif;
+}
+
+.card-style-background{
+    background-color: rgba(211, 211, 211, 0.25);
+}

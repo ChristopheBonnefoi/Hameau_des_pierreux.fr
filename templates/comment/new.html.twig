@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/comment.css') }}">
+
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src:    url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Commentaire{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-5">Laissez un commentaire</h1>
+
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto">
+
+        {{ include('comment/_form.html.twig') }}
+
+    </div>
+
+    <form method="GET" action="{{ path('app_comment_show') }}" class="my-3 text-center">
+        <button class="btn btn-back">Retour à la liste</button>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/comment.js') }}"></script>
+{% endblock %}

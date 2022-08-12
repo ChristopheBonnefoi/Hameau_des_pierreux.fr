@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email</title>
+    <style>
+
+        {# Ajout de  la police d'écriture #}
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+        {# Block du Header du mail #}
+        .mail_head{
+            background-color: rgba(194, 211, 79, 0.5);
+            padding-top: 1vh;
+            padding-bottom: 2vh;
+            padding-left: 2vh;
+        }
+        h1, h2 {
+            color: #5b6d08;
+        }
+
+        {# Fin du block Header du mail #}
+        {# Block Body du mail #}
+        .btn{
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-left: 4px;
+            width: 130px;
+            border-radius: 5px;
+            background-color: #5b6d08;
+            border-color: #c2d34f;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .btn a{
+            text-decoration: none;
+            color: #c2d34f;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover{
+            background-color: #c2d34f;
+            border-color: #5b6d08;
+        }
+
+        .btn a:hover{
+            color: #5b6d08;
+        }
+
+        .flex_p_btn{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        {# Fin du block body du mail #}
+    </style>
+</head>
+<body>
+    {# En-tete du mail #}
+    <div class="mail_head">
+        <h1>Le Hameau des Pierreux </h1>
+        <h2>Hébergement pour groupe de 6 à 50 personnes</h2>
+    </div>
+    {# Body du mail #}
+    <p> Vous avez reçu un nouveau commentaire</p>
+    <div class="flex_p_btn">
+        <p> Veuillez vous connecté à votre page admin de <div class="btn"><a href="{{ path('app_comment_index') }}">notification</a></div></p>
+    </div>
+
+
+
+</body>
+</html>

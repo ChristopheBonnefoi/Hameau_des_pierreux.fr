@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/services_histoire.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+
+        @font-face {
+            font-family: 'KGSecondChancesSketch';
+            src: url({{asset('fonts/KGSecondChancesSketch.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-3">Nos services et tarifs</h1>
+
+    {# Section Hébergement #}
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center">
+            <div class="card my-5">
+                <div class="card-body card-style-background">
+
+                    <h2 class="text-center mb-4">Tarifs des hébergements</h2>
+                    <hr class="dropdown-divider">
+                    {% for price in prices %}
+
+                        <h4>Cabanon 6 à 7 couchages</h4>
+                        {{ price.cottage|purify }}
+                        <hr class="dropdown-divider">
+
+                        <h4>Chalet 6 à 7 couchages</h4>
+                        {{ price.lodge|purify }}
+                        <hr class="dropdown-divider">
+
+                        <h4>Tente trappeur 10 à 12 couchages</h4>
+                        {{ price.tent|purify }}
+                        <hr class="dropdown-divider">
+
+                        <h4>Le petit déjeuner</h4>
+                        {{ price.breakfast|purify }}
+
+                        <h4>TARIFS DÉGRESSIFS</h4>
+                        <p>vous souhaitez réserver plusieurs unités et/ou plusieurs nuits, contactez-nous pour un devis
+                            !</p>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('app_prices_edit', {'id': price.id}) }}" class="btn btn-back">Modifier vos
+                                tarifs</a>
+                        {% endif %}
+                    {% else %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('app_prices_new') }}" class="btn btn-delete">Créez vos tarifs</a>
+                        {% endif %}
+
+                        <h4 class="text-center"> Les tarifs sont en cours de modifications </h4>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+            <p>*</p>
+            <p>Une caution vous sera demandée à votre arrivée.</p>
+            <p>Taxe de séjour de 2,2% du prix de la nuitée par adulte</p>
+            <p>Conciergerie possible sur devis</p>
+        </div>
+    </div>
+
+    {# Section Nous pouvons #}
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center">
+            <div class="card my-5">
+                <div class="card-body card-style-background">
+
+                    <h2 class="text-center mb-4">Nous pouvons aussi</h2>
+                    <hr class="dropdown-divider">
+
+                    <h4>Préparer vos repas</h4>
+                    <p>Nous travaillons avec des producteurs locaux, cuisinons des fruits et légumes de saison, et nous
+                        adaptons à votre budget.</p>
+                    <hr class="dropdown-divider">
+
+                    <h4>Réserver vos activités, concevoir et organiser votre programme</h4>
+                    <p>enterrement de vie de célibataire, anniversaire, cousinade, séminaire…</p>
+                    <hr class="dropdown-divider">
+
+                    <h4>Organiser votre soirée</h4>
+                    <p>à la Grotte de Champ Retard</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Section Bonnes idées #}
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center">
+            <div class="card my-5">
+                <div class="card-body card-style-background">
+
+                    <h2 class="text-center mb-4">Bonnes idées</h2>
+                    <hr class="dropdown-divider">
+
+                    <p>Louez l’ensemble de nos hébergements et profitez d’un tarif forfaitaire</p>
+                    <p>Louez l’ensemble de nos hébergements + la Grotte de Champ Retard, et passez une soirée
+                        extraordinaire !</p>
+                    <p>Profitez de nos installations à la journée pour vos réunions, assemblées…</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

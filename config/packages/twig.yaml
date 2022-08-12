@@ -1,0 +1,15 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+
+    # activation du thème BootStrap 5 pour les formulaires du site
+    form_themes: [ 'bootstrap_5_layout.html.twig' ]
+
+    globals:
+
+        site_name: 'Le Hameau des Pierreux'
+        google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
+        notify: '@App\twig\notifyExtension'
+
+when@test:
+    twig:
+        strict_variables: true

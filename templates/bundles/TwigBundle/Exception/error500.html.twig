@@ -1,0 +1,25 @@
+{% extends "base.html.twig"  %}
+
+{%block title%}Erreur 500 : Problème interne au serveur{%endblock%}
+
+{%block body%}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <h1 class="my-5">Oups !</h1>
+                <h3>Cette page ne fonctionne pas</h3>
+
+                <p class="erreur-type my-2">500</p>
+                <p class="erreur-text">Problème interne au serveur</p>
+
+                <form method="GET" action="{{ path('main_home') }}" class="my-5 text-center">
+                    <button class="btn btn-back">Retour à l'accueil</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

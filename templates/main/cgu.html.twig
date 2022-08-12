@@ -1,0 +1,255 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Hameau des Pierreux - Conditions générales d'utilisation{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cgu.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        {# Titre H1 de la page #}
+        <div class="row">
+            <div class="text-center my-4">
+                <h1>Conditions Générales d'Utilisation</h1>
+            </div>
+        </div>
+
+        {# Section des Avis Clients #}
+
+        {# Titre h2 #}
+        <div class="row">
+            <div class="text-center my-2">
+                <h2> Des Avis Clients </h2>
+            </div>
+        </div>
+
+        {# Article #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+
+                <div class="article-margin"> {# Article 1 #}
+                    <h6 class="article-style">Article 1 : Définitions</h6>
+                    <p>Chaque terme écrit ci-après en majuscule a le sens qui lui est donné dans sa définition :</p>
+                    <p><span>« CONDITIONS GENERALES D'UTILISATION » (CGU)</span> désigne le présent document.</p>
+                    <p><span>« CLIENT »</span> désigne la personne ayant séjourné dans une chambre d'hôtes, un gîte ou
+                        un appartement et
+                        qui rédige un avis sur ce logement. </p>
+                    <p><span>« VOYAGEUR »</span> désigne la personne à la recherche d'un logement dans une chambre
+                        d'hôtes, un gîte ou
+                        un appartement.</p>
+                    <p><span>« PROPRIETAIRE »</span> désigne la personne propriétaire. </p>
+                </div>
+
+                <div class="article-margin"> {# Article 2 #}
+                    <h6 class="article-style">Article 2 : Domaine d'application</h6>
+                    <p>Les avis CLIENTS constituent aujourd'hui un élément majeur dans les processus de recherche
+                        d'informations et de décision de réservation. Ils offrent également une source d'informations
+                        particulièrement riche pour les propriétaires dans l'amélioration continue de la qualité de
+                        leurs services ainsi que dans le développement de la qualité de leur relation client.</p>
+                    <p class="text-margin">Ce document sur la fiabilité des processus de collecte, modération et
+                        restitution des avis en ligne de CLIENTS définit l'ensemble des principes et exigences mis en
+                        place par le PROPRIETAIRE afin de traiter de manière crédible et loyale les avis des CLIENTS. Le
+                        traitement des avis comprend les étapes de leur collecte, leur modération et leur
+                        restitution.</p>
+                </div>
+
+                <div class="article-margin"> {# Article 3 #}
+                    <h6 class="article-style">Article 3 : Information du VOYAGEUR</h6>
+                    <p>le PROPRIETAIRE établit des principes et règles de collecte, modération et restitution des avis
+                        auxquels les CLIENTS doivent se conformer pour que leurs avis puissent être acceptés et
+                        publiés.</p>
+                </div>
+
+                <div class="article-margin"> {# Article 4 #}
+                    <h6 class="article-style">Article 4 : Processus de collecte</h6>
+                    <p>L'objectif général de la collecte est de recueillir l'avis des CLIENTS de manière objective et
+                        vérifiable. Elle veille à ce qu'aucun biais ne puisse être introduit par aucune partie prenante.
+                        Elle permet d'assurer que le CLIENT puisse exprimer son avis sur une expérience de séjour vécue
+                        par lui, en toute connaissance des modalités de dépôt et sans que le processus de collecte
+                        n'oriente en quoi que ce soit son opinion.</p>
+                    <ul class="text-margin">
+                        <li>Tous les CLIENTS peuvent laisser leur avis.</li>
+                        <li>Les CLIENTS ne doivent pas déposer leur avis à partir de l'ordinateur ou de la connexion
+                            internet du PROPRIETAIRE.
+                        </li>
+                        <li>Seule une personne physique (pas de personne morale) peut déposer un avis et communique des
+                            éléments permettant de l'identifier ou de le contacter personnellement en cas de besoin.
+                        </li>
+                        <li>Pas de sélection des CLIENTS en fonction de la perception de leur expérience (positive ou
+                            négative) ou de leurs caractéristiques (par exemple clients fréquents ou abonnés).
+                        </li>
+                        <li>Les auteurs possédant des intérêts en lien avec l'objet évalué ne peuvent pas laisser d'avis
+                            (conflit d'intérêt).
+                        </li>
+                        <li>Pas de présentation inexacte ou tromperie sur l'objet noté (le nom complet de l'hébergement
+                            figure sur le formulaire).
+                        </li>
+                        <li>Les CLIENTS s'engagent lorsqu'ils rédigent un avis à avoir vécu personnellement l'expérience
+                            de séjour.
+                        </li>
+                        <li>Si un CLIENT séjourne régulièrement chez un PROPRIETAIRE, ce CLIENT peut déposer un avis. Il
+                            devra ensuite attendre au moins six mois pour en déposer un nouveau suite à un nouveau
+                            séjour.
+                        </li>
+                    </ul>
+                    <p>Le PROPRIETAIRE rejettera les avis qui ne respectent pas ces principes.</p>
+                    <p class="text-margin">Le PROPRIETAIRE recueille des avis à diverses fins :</p>
+                    <ul>
+                        <li>Evaluer la satisfaction des CLIENTS sur leur séjour.</li>
+                        <li>Comparer les avis des CLIENTS sur différents logements afin d'aider les VOYAGEURS dans leurs
+                            décisions de réservation.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="article-margin"> {# Article 5 #}
+                    <h6 class="article-style">Article 5 : Attributs des avis CLIENTS</h6>
+                    <p>Un avis de CLIENT est constitué obligatoirement des attributs suivants, permettant d'attester de
+                        l'expérience de séjour, et qui sont recueillis lors de la phase de collecte par :</p>
+                    <ul>
+                        <li>L'identification du CLIENT, auteur de l'avis.</li>
+                        <li>L'horodatage du dépôt de l'avis du CLIENT.</li>
+                        <li>La description de l'expérience de séjour en texte libre dans le formulaire.</li>
+                    </ul>
+                    <p class="text-margin">Le CLIENT accepte d'être recontacté à des fins de vérification de son
+                        séjour.</p>
+                    <p>Le PROPRIETAIRE respecte la législation sur la protection des données personnelles en
+                        vigueur.</p>
+                    <p>Conformément à la Loi n° 78-17 du 6 janvier 1978, dite Loi Informatique et Liberté, vous disposez
+                        d'un droit d'accès, de suppression, pour toute information vous concernant en vous adressant au
+                        PROPRIETAIRE.</p>
+                </div>
+
+                <div class="article-margin"> {# Article 6 #}
+                    <h6 class="article-style">Article 6 : Processus et outils de vérification lors de la collecte</h6>
+                    <p>Le propriétaire utilise un processus de vérification manuelle de vérification du contenu collecté
+                        pour s'assurer qu'il est bien conforme aux principes et règles.</p>
+                    <p>Les analyses effectuées s'appuient notamment sur :</p>
+                    <ul>
+                        <li>Le comportement de l'utilisateur (fréquence de rédaction d'avis, historique des
+                            contributions, localisation, etc...).
+                        </li>
+                        <li>L'examen du langage utilisé dans l'avis.</li>
+                    </ul>
+                    <p class="text-margin">Sur la base de ces analyses, le PROPRIETAIRE enclenche immédiatement les
+                        processus de modération et restitution du contenu non problématique.</p>
+                    <p>En effet, la rapidité joue un rôle primordial dans une expérience positive de l'utilisateur et
+                        dans la pertinence du contenu publié. Ne sont pas considérés comme contenu potentiellement
+                        problématique les avis faisant état d'une insatisfaction du VOYAGEUR sur son séjour.</p>
+                    <p class="text-margin">Le contenu potentiellement problématique remonte à l'équipe de modération qui
+                        a pour mission d'identifier et de prévenir l'envoi de contenu émanant notamment :</p>
+                    <ul>
+                        <li>De personnes écrivant des avis dans le but de porter atteinte à la réputation du
+                            PROPRIETAIRE.
+                        </li>
+                        <li>De tout tiers envoyant des avis au nom d'un individu dans le but de fausser une
+                            réputation.
+                        </li>
+                        <li>De tout dispositif ayant tenté de masquer, déformer ou dissimuler son identité.</li>
+                    </ul>
+                </div>
+
+                <div class="article-margin"> {# Article 7 #}
+                    <h6 class="article-style">Article 7 : Formulaire de collecte</h6>
+                    <p>Le PROPRIETAIRE n'oriente pas l'avis dans un sens ou un autre.</p>
+                    <p>Le CLIENT peut décrire son expérience de séjour avec ses mots et son langage.</p>
+                </div>
+
+                <div class="article-margin"> {# Article 8 #}
+                    <h6 class="article-style">Article 8 : Processus de modération</h6>
+                    <p>La modération a pour but de s'assurer de la conformité du contenu collecté au droit français et
+                        aux CONDITIONS GENERALES D'UTILISATION du PROPRIETAIRE en vue de publier, rejeter ou supprimer
+                        ce contenu.</p>
+                    <p class="text-margin">Tous les contenus relatifs à l'identité du consommateur et aux avis collectés
+                        et destinés à être publiés font l'objet d'une modération. Tous les avis font l'objet du même
+                        processus de modération sans distinction de leur contenu.</p>
+                    <p class="text-margin">Le PROPRIETAIRE utilise une modération qui est humaine.</p>
+                    <p class="text-margin">Le même délai de modération s'applique à l'ensemble des avis qu'ils soient
+                        positifs ou négatifs.</p>
+                </div>
+
+                <div class="article-margin"> {# Article 9 #}
+                    <h6 class="article-style">Article 9 : Rôle et moyens des modérateurs</h6>
+                    <p>Le strict respect du processus de traitement des avis dans le cadre du présent document assure
+                        l'impartialité de la modération. Les modérateurs ont les capacités et les moyens suffisants
+                        d'apprécier le contenu d'un avis pour pouvoir décider de la publication, du rejet ou de la
+                        suppression de l'avis de consommateur.</p>
+                    <p class="text-margin">Le modérateur peut :</p>
+                    <ul>
+                        <li>Accéder à l'intégralité du contenu de l'avis de consommateur collecté.</li>
+                        <li>Accéder à toutes les informations relatives à l'historique du dépôt d'avis (nombre de
+                            soumissions du même avis après rejet initial).
+                        </li>
+                        <li>Pouvoir confier de façon traçable la modération d'un avis de consommateur à un autre
+                            modérateur.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="article-margin"> {# Article 10 #}
+                    <h6 class="article-style">Article 10 : Modération à posteriori</h6>
+                    <p>La modération humaine a posteriori est réalisée par les modérateurs qui prennent connaissance du
+                        contenu de l'avis de consommateurs après publication, pour pouvoir décider de la suppression ou
+                        non de l'avis. Toutefois, après suppression, le consommateur peut déposer un nouvel avis
+                        modifié.</p>
+                    <p class="text-margin">L'auteur de l'avis peut faire jouer auprès du PROPRIETAIRE son droit de
+                        retrait conduisant à l'arrêt de la publication de son avis de consommateur.</p>
+                </div>
+
+                <div class="article-margin">  {# Article 11 #}
+                    <h6 class="article-style">Article 11 : Motifs de rejet d'un avis CLIENT</h6>
+                    <p>L'avis d'un CLIENT peut être rejeté notamment pour les motifs suivants :</p>
+                    <ul>
+                        <li>Si le PROPRIETAIRE estime que sa responsabilité civile ou pénale peut être engagée.</li>
+                        <li>Si le contenu textuel relatif à l'identité de l'auteur comporte des injures ou
+                            grossièretés.
+                        </li>
+                        <li>Si le contenu textuel comporte des caractères aléatoires ou des mots sans aucune
+                            signification.
+                        </li>
+                        <li>Si les attributs de l'avis comportent des éléments concrets de conflits d'intérêts.</li>
+                        <li>Si le contenu textuel est mal écrit au point d'en être inintelligible.</li>
+                        <li>Si un utilisateur formule un commentaire inapproprié sur un autre contenu.</li>
+                        <li>Si le contenu textuel destiné à être publié comporte des informations personnelles, telles
+                            que le nom ou prénom d'individus qui ne sont pas des personnes publiques, un numéro de
+                            téléphone, une adresse physique précise ou une adresse email.
+                        </li>
+                        <li>Si le contenu textuel comporte un appel à une action en justice.</li>
+                        <li>Si le contenu mentionne des sites Web, liens hypertexte, URL, adresses email ou numéros de
+                            téléphone, y compris ceux du CLIENT.
+                        </li>
+                        <li>Si le contenu textuel est clairement du spam.</li>
+                    </ul>
+                </div>
+
+                <div class="article-margin">  {# Article 12 #}
+                    <h6 class="article-style">Article 12 : Afficher des informations sur l'auteur de l'avis</h6>
+                    <p>Le VOYAGEUR pourra consulter le pseudo, le prénom et le lieu de résidence de l'auteur d'un avis
+                        et sa tranche d'âge. Mais ni son nom, ni même son adresse e-mail ne sont diffusés.</p>
+                </div>
+
+                <div class="article-margin">  {# Article 13 #}
+                    <h6 class="article-style">Article 13 : Droit de réponse du propriétaire</h6>
+                    <p>Le PROPRIETAIRE peut répondre publiquement aux avis afin de :</p>
+                    <ul>
+                        <li>Donner sa version des faits.</li>
+                        <li>Remercier le consommateur pour sa contribution.</li>
+                        <li>Indiquer les éventuels changements introduits depuis la rédaction de l'avis.</li>
+                    </ul>
+                </div>
+
+                {# margin entre le dernier article et le footer #}
+                <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

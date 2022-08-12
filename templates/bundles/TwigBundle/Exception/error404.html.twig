@@ -1,0 +1,25 @@
+{% extends "base.html.twig"  %}
+
+{%block title%}Erreur 404 : page introuvable{%endblock%}
+
+{%block body%}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <h1 class="my-5">Oups !</h1>
+                <h3>La page que vous recherchez semble introuvalble</h3>
+
+                <p class="erreur-type my-2">404</p>
+                <p class="erreur-text">Page non trouvée</p>
+
+                <form method="GET" action="{{ path('main_home') }}" class="my-5 text-center">
+                <button class="btn btn-back">Retour à l'accueil</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{%endblock%} 

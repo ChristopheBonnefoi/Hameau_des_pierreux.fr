@@ -1,0 +1,52 @@
+/* Style de card pour afficher les images */
+.card-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(182, 180, 180, 0.4);
+    padding: 1vw;
+    border-radius: 20px;
+}
+
+.img-style-form {
+    width: 10vw;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 2vh;
+}
+
+/* Style des champs de formulaire */
+#edit_habitat_title:focus,
+#edit_habitat_description:focus,
+#edit_habitat_coverImage:focus,
+#edit_habitat_places:focus,
+#edit_habitat_content:focus,
+#edit_habitat_images:focus {
+    border: var(--third-color) !important;
+    box-shadow: 0 0 0 .25rem var(--form-focus) !important;
+    transition: all 0.5s ease-in-out !important;
+}
+
+/* Style text sous section image */
+.text_p_style {
+    margin-top: -10px;
+    margin-bottom: 4vh;
+    color: grey;
+    font-size: small;
+    text-align: center;
+}
+
+/* Style du h3 */
+h3 {
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+
+    /* Style text sous section image */
+    .text_p_style {
+        text-align: left;
+    }
+}

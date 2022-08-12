@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+/* Style des titres */
+h1 {
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    color: var(--main-color);
+}
+
+/* Style des card */
+.card-style-background {
+    background-color: rgba(211, 211, 211, 0.25);
+    border-radius: 20px;
+}
+
+/* Style pour les activité */
+span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+/* Style Text */
+
+.text-style-link {
+    font-size: 1.5rem;
+}
+
+.style-padding {
+    padding-left: 0.5vw;
+}
+
+p {
+    margin-bottom: 0.5vh;
+    margin-top: 0.5vh;
+}
+
+.partner {
+    color: var(--main-color);
+}
+
+.partner:hover {
+    color: var(--third-color);
+}
+
+/* Style des liens */
+a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+a:hover {
+    color: var(--third-color);
+}
+
+/* Style image */
+.img-style-all {
+    border-radius: 20px;
+}
+
+/* Style du text en h5 */
+h5 {
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    color: var(--main-color);
+    text-align: center;
+    font-size: 0.90rem;
+}

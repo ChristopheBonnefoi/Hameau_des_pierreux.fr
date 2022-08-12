@@ -1,0 +1,13 @@
+
+
+{{ form_start(comment_form) }}
+    {{ form_widget(comment_form) }}
+
+{# Affichage du captcha avec la clé publique récupérée directement grâce à la passerelle faite dans twig.yaml #}
+<div class="form-group ">
+    <div class="g-recaptcha my-5" data-sitekey="{{ google_recaptcha_site_key }}"></div>
+</div>
+
+    <button class="btn btn-validate btn-comment text-center mx-auto">{{ button_label|default('Valider') }}</button>
+
+{{ form_end(comment_form) }}

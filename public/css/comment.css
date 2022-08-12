@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+#comment_author:focus, #FormControlInputCaptcha:focus{
+
+border: var(--third-color) !important;
+box-shadow: 0 0 0 .25rem var(--form-focus) !important;
+transition: all 0.5s ease-in-out !important;
+}
+
+h1{
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    color: var(--main-color);
+    font-size: 2.5rem;
+}
+
+.card-style-background{
+    background-color: rgba(211, 211, 211, 0.25);
+}
+
+.content{
+    text-align: justify;
+}
+
+.comment-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.card-body{
+    align-items: center;
+}
+
+.card-body p{
+    text-align: justify;
+}
+
+.btn-comment{
+    display: flex;
+    justify-content: center;
+}
+
+.bouton-link-comment a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+#btn-notify a{
+    text-decoration: none;
+    color: white;
+}
+
+#btn-notify a:hover{
+    color: black;
+}
+
+.bouton-link-comment a:hover{
+    color: black;
+}
+
+.bouton-link-comment:hover{
+    background-color: var(--second-color);
+    border-color: var(--fourth-color);
+    color: black;
+}
+
+
+/* Menus paginations */
+.pagination .page-item .page-link{
+    background-color: rgba(211, 211, 211, 0.25);
+    color: var(--main-color);
+}
+
+.page-item.active .page-link{
+    border-color: var(--main-color);
+}
+
+.pagination .page-item.disabled{
+    cursor: not-allowed;
+}
+
+.pagination .page-item.disabled .page-link, .pagination .page-item.active .page-link{
+    color: grey;
+}
+
+.pagination .page-item a.page-link:hover{
+    background-color: var(--third-color);
+}
+/*bouton notif checkbox*/
+.form-check-input:checked{
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+}
+
+    /*Button switch page admin des commentaires*/
+.validation-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.validation-container .form-check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.validation-container .form-check-input{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%255, 221, 84, 0.25%29'/%3e%3c/svg%3e");
+}
+
+.validation-container .form-check-input:checked{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.validation-container .form-check-input:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .25rem var(--form-focus);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%255, 221, 84, 0.25%29'/%3e%3c/svg%3e");
+}
+
+/*notification*/
+ .btn-trash{
+     color: var(--main-color);
+     transition: all 0.5s ease-in-out;
+ }
+
+.btn-trash:hover {
+    color: var(--third-color);
+}

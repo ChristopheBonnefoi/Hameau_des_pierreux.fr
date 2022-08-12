@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des espaces{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/list-habitat.css') }}">
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        {# Titre de la page #}
+        <div class="row">
+            <div class="text-center">
+                <h1>Liste des espaces</h1>
+            </div>
+        </div>
+
+        {# Crée une nouvelle habitation visible uniquement pour les admin #}
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="row">
+                <div class="my-3">
+                    <a href="{{ path('app_habitat_new') }}"
+                       class="btn btn-delete col-8 offset-2 col-lg-6 offset-lg-3 col-xl-2 offset-xl-5">Créer un nouvel
+                        espace</a>
+                </div>
+            </div>
+        {% endif %}
+
+        {# Card des habitation #}
+        <div class="d-flex my-3 justify-content-around flex-wrap">
+            {% for habitat in habitats %}
+                <div class=" col-12 col-lg-10  col-xl-4 my-2">
+                    <div class="card mx-2 my-2 test">
+                        <div class="card-body card-style-background">
+                            <h5 class="card-title text-center card-style-title">{{ habitat.title }}</h5>
+                            <p class="card-text text-center">{{ habitat.description }}</p>
+
+                            <img src="{{ asset('images/uploads/' ~ habitat.coverImage) }}" class="card-img img-fluid"
+                                 alt="images habitations">
+
+                            <div class="my-2">
+                                <a href="{{ path('app_habitat_show', {'id': habitat.id}) }}" class="btn btn-validate">Voir</a>
+                                {# Bouton uniquement pour les admin pour modifier l'habitation #}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('app_habitat_edit', {'id': habitat.id}) }}" class="btn btn-back">Modifier</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% else %}
+                <p>Aucun espace trouvé</p>
+            {% endfor %}
+        </div>
+
+
+    </div>
+{% endblock %}

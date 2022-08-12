@@ -1,0 +1,28 @@
+/* Style de la card des habitations*/
+
+.test {
+    height: 100%;
+}
+
+/* Fond de la card */
+.card-style-background {
+    background-color: rgba(211, 211, 211, 0.25);
+}
+
+/* Titre */
+.card-style-title {
+    color: var(--main-color) !important;
+    font-size: 1.50rem !important;
+    font-family: 'KGSecondChancesSolid', sans-serif !important;
+}
+
+@media screen and (min-width: 1200px) {
+    /* Titre */
+    .card-style-title {
+        color: var(--main-color) !important;
+        font-size: 1.65rem !important;
+        font-family: 'KGSecondChancesSolid', sans-serif !important;
+    }
+
+
+}

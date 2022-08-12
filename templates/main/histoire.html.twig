@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/services_histoire.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src:    url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+        @font-face {
+            font-family: 'KGSecondChancesSketch';
+            src:    url({{asset('fonts/KGSecondChancesSketch.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Le Hameau des Pierreux - Histoire{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center my-3">Histoire</h1>
+
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center">
+            <div class="card my-5">
+                <div class="card-body card-style-background">
+
+                    <h2 class="text-center mb-4">Petite histoire de la Grotte de Champ Retard</h2>
+                    <hr class="dropdown-divider">
+
+                    <p class="my-3 text-start mt-4">
+                        Le site sur lequel se situe le Hameau des Pierreux s’appelle la Grotte de Champ Retard. Mais ce n’est pas
+                        seulement un lieu dit, c’est aussi une ancienne carrière de pierre.
+                    </p>
+
+                    <img src="{{ asset('images/La carrière.jpg') }}" alt="carrière" class="img-fluid my-3">
+
+                    <img src="{{ asset('images/La carrière en 1903.jpg') }}" alt="carrière 1903" class="img-fluid my-3">
+                    
+                    <p class="my-3 text-start">
+                        La Grotte de Champ Retard est une ancienne carrière de pierre blanche, et fait partie des plus anciennes carrières de la région. Elle est constituée de calcaires de la grande oolithe, et donne d’excellentes pierres de taille. Les blocs de calcaire blanc extraits pouvaient peser plusieurs tonnes. Avec ces blocs ont été construits des fontaines, des piliers d’église, comme par exemple à Vézelay, les colonnes du chœur de la basilique Sainte Madeleine, 4 mètres de haut d’une seule pièce.
+                    </p>
+
+                    <p class="my-3 text-start">
+                        L’extraction s’est d’abord faite à ciel ouvert. Puis les ouvriers, voulant exploiter un nouveau filon, se
+                        retrouvèrent face à un « découvert » trop important (pierre grise de mauvaise qualité qui forme la voûte de la carrière). Ils ont donc entreprit une extraction souterraine et découvrirent une pierre blanche plus tendre. Des centaines d’ouvriers se sont succédés au fil des années pour creuser et façonner La Grotte, seule carrière de l’Avallonnais exploitée de manière souterraine. Au début du 19ème siècle, une quarantaine d’ouvriers travaillaient dans cette carrière.
+                    </p>
+
+                    <p class="my-3 text-start">
+                        La carrière connut des années de déclin dues à la diminution des commandes, au défaut d’entente entre les
+                        carriers et à la concurrence de puissantes exploitations. Pourtant, à la fin du 19ème siècle, Alfred de Nansouky, originaire de Vézelay, reprend en main l’exploitation de la carrière de la Grotte de Champ Retard. Rapidement, deux vastes usines à vapeur, actionnant de puissantes machines, des scies à diamants, à fils, châssis, tours, appareils de levage hydrauliques et électriques, ont fait de la société Nansouky un des premiers fournisseurs de pierres taillées de la place de Paris. Au mois d’avril 1901, la société était en état de livrer un minimum de 10 000 m3 par an à la capitale. L’une de ces usines était installée à Dissangis, (à 3 kilomètres de la Grotte de Champ Retard) où l’on voit encore les bâtiments et sa haute cheminée.
+                    </p>
+
+                    <p class="my-3 text-start">
+                        Puis, à la fin des années 30, la carrière de Champ Retard a cessé son activité, et le site a été fermé. Il a rouvert dans les années 50 pour fournir des blocs à un monument belge, détruit pendant la seconde guerre mondiale. L’exploitation s’est faite avec les techniques modernes : fil à couper le beurre, machine à vapeur. Vous pourrez, en visitant la grotte, voir les traces des 2 techniques d’extraction : manuelle et mécanique.
+                    </p>
+
+                    <img src="{{ asset('images/La carrière en 2003.jpg') }}" alt="carrière 2003" class="img-fluid my-3">
+
+                    <p class="my-3 text-start">
+                        François Maure l’a « découverte » en 2003, en est tombé amoureux, et a réussi à la racheter aux propriétaires. Spécialisé dans l’évènementiel sportif, François a créé un parcours aventure unique en France, un accro-paroi qui offre émotions et sensations…entre ciel et pierre !
+                    </p>
+
+                    <img src="{{ asset('images/Accro-paroi.jpg') }}" alt="escalade" class="img-fluid my-3">
+
+                    <img src="{{ asset('images/Pont.jpg') }}" alt="Pont" class="img-fluid my-3">
+
+                    <img src="{{ asset('images/pont de singe PL.jpg') }}" alt="pont de singe" class="img-fluid my-3">
+
+                    <img src="{{ asset('images/Tyrolienne.jpg') }}" alt="Tyrolienne" class="img-fluid my-3">
+
+                    <p class="my-3 text-start">
+                        Mais son plus grand désir était d’en faire un lieu de vie et de fête. Alors, avec des amis, il a aussi monté
+                        l’association « Les Arts de la Grotte » , pour organiser des concerts dont la jauge est de 700 personnes.
+                    </p>
+
+                    <img src="{{ asset('images/PHOTO La fête à la grotte.jpg') }}" alt="Tyrolienne" class="img-fluid my-3">
+
+                    <img src="{{ asset('images/PHOTO Concert Grotte.jpg') }}" alt="Tyrolienne" class="img-fluid my-3">
+
+                    <p class="my-3 text-start">
+                        François a revendu le fond de commerce de la Grotte à Ailleurs en Bourgogne, pour se lancer dans la
+                        construction du Hameau des Pierreux.
+                    </p>
+
+                    <p class="my-3 text-start">
+                        Aujourd’hui, c’est la société Bourgogne Sensations qui gère le fond de commerce de la Grotte de Champ Retard.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Hameau des Pierreux - Accueil{% endblock %}
+
+{% block body %}
+
+    <!-- PHOTO -->
+
+    <div class="row">
+        <img src=" {{ asset('images/Arrivée_Hameau_2.jpg') }}" alt="photo entrée" class="col-12 img-fluid">
+    </div>
+
+    <!-- TEXTE ACCUEIL -->
+
+    <div class="row ">
+        <div class="col-10 col-md-6 col-lg-4 text-center mx-auto py-3 text-home">
+            <h1 class="main-title">Bienvenue au Hameau des Pierreux, le lieu idéal pour toutes vos fêtes : ici, à part les hiboux et les chouettes, vous n'aurez pas de voisins !</h1>
+        </div>
+    </div>
+
+    <!-- Section évènement -->
+
+    {{ include('announcement/index.html.twig') }}
+
+    <!-- ADRESSE -->
+
+    <div class="row ">
+        <div class="col-10 col-md-6 col-lg-4 text-center mx-auto py-3 adress-container">
+            <h3>Grotte de Champ Retard RD 11 <br>
+                89 440 Coutarnoux <br>
+                <a href="tel:+33640116046">06 40 11 60 46</a> <br>
+                <a href="mailto: lehameaudespierreux@gmail.com">bienvenue@hameaudespierreux.fr</a>
+            </h3>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,12 @@
+<div class="bell-container mx-2">
+    <a class="bell-icon" href="{{ path('app_comment_index') }}"><i class="fa-solid fa-bell"></i></a>
+    <div class="bell-notif">
+        {# boucle pour chaque notification dans la colonne notification en base de données #}
+        {% for notify in notify.getNotifications %}
+            {# condition qui affiche chaque notification égales à true #}
+            {% if notify.notification == 1 %}
+                <a class="notification-result" href="#"> {{ notify.notification }} </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

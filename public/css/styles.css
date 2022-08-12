@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+/* Déclaration variables CSS */
+:root {
+    /* Couleur */
+    --main-color: #5b6d08;
+    --second-color: #ffdd54;
+    --third-color: #c2d34f;
+    --fourth-color: #e7660e;
+    --form-focus: rgba(91, 109, 8, 0.3)
+}
+
+/* Général sur le site */
+h1 {
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    font-size: 2rem;
+}
+
+h1, .main-title{
+    font-size: 1.25rem;
+}
+
+.card-style-background {
+    background-color: rgba(211, 211, 211, 0.25);
+}
+
+.menu{
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+/* Fin général site */
+
+Body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    min-height: 90vh;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -350px;
+    min-height: 300px;
+}
+
+/* header */
+.header-container {
+    align-items: center;
+}
+
+.header-container h1 {
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    font-size: 0.8rem;
+}
+
+/*NAVBAR*/
+.navbar-container nav ul {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+}
+
+.navbar-container ul li {
+    list-style: none;
+}
+
+.navbar-container ul li a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    font-size: 0.8rem;
+    padding-right: 15px;
+}
+
+.bell-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.bell-icon {
+    color: var(--main-color);
+    font-size: 1.3rem;
+}
+
+.bell-icon:hover {
+    color: var(--third-color);
+}
+
+.bell-container .bell-notif a {
+    text-decoration: none;
+    color: white;
+}
+
+.bell-notif {
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: -2px;
+    right: 7px;
+}
+
+
+/* SIDEBAR */
+.sidebar img {
+    width: 15vw;
+    height: auto;
+}
+
+.sidebar h5 {
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    font-size: 1rem;
+}
+
+/* section bienvenue */
+.text-home h2 {
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* section évènements */
+.event-container {
+    background-color: beige;
+    color: var(--main-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.event-container h3 {
+    font-size: 1rem;
+    font-family: 'KGSecondChancesSolid', sans-serif;
+}
+
+.separateur {
+    background-color: var(--main-color);
+    height: 1px;
+    width: 100%;
+}
+
+/* Adresse */
+.adress-container h3 {
+    color: var(--main-color);
+    font-size: 0.8rem;
+    font-family: 'KGSecondChancesSolid', sans-serif;
+}
+
+.adress-container a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+.adress-container a:hover {
+    color: var(--third-color);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Réseaux sociaux */
+.icons-container nav ul li {
+    list-style: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 2rem;
+}
+
+.icons-container nav ul i {
+    color: var(--main-color);
+}
+
+.icons-container nav ul i:hover {
+    color: var(--fourth-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.icons-container nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.link-footer-container a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.link-footer-container a:hover {
+    color: var(--fourth-color);
+    transition: all 0.5s ease-in-out;
+    text-decoration: none;
+}
+
+/* Bouton Design */
+
+/* Design Bouton Validation */
+.btn-validate {
+    background-color: var(--main-color);
+    border-color: var(--third-color);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-validate:hover {
+    background-color: var(--third-color);
+    border-color: var(--main-color);
+    color: black;
+}
+
+/* Design Bouton Retour */
+.btn-back {
+    background-color: var(--fourth-color);
+    border-color: var(--second-color);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-back:hover {
+    background-color: var(--second-color);
+    border-color: var(--fourth-color);
+    color: black;
+}
+
+/* Design Bouton Suppression */
+.btn-delete {
+    background-color: #f52525;
+    border-color: #fc9696;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-delete:hover {
+    background-color: #fc9696;
+    border-color: #f52525;
+    color: black;
+}
+
+/* End Bouton Design */
+
+/* Message Flash Design */
+.alert-validate {
+    color: var(--main-color);
+    background-color: var(--third-color);
+    border-color: var(--main-color);
+}
+
+.alert-error {
+    color: #ffffff;
+    background-color: #f52525;
+    border-color: #fc9696;
+}
+
+/* End Message Flash Design */
+
+@media screen and (min-width: 768px) {
+
+    /* Général sur le site */
+    h1 {
+        font-size: 3rem;
+    }
+
+    /* Fin général site */
+    .header-container h1 {
+        font-size: 1.3rem;
+    }
+
+    .sidebar img {
+        width: 10vw;
+        height: auto;
+    }
+
+    .text-home {
+        background-color: rgb(255, 255, 255);
+        margin-top: -52px;
+        border-radius: 70px;
+        margin-bottom: 15px;
+    }
+
+    .text-home h2 {
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+        margin: 0;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .event-container {
+        border-radius: 15px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .adress-container {
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        top: 100px;
+        border-radius: 70px;
+        margin-top: 30px;
+        z-index: 1;
+    }
+
+    .footer-container {
+        background-color: beige;
+    }
+
+    .img-contain {
+        padding-left: 30px;
+    }
+
+    .img-contain img {
+        width: 12vw;
+        height: auto;
+    }
+
+    .img-contain p {
+        color: var(--main-color);
+        font-family: 'KGSecondChancesSolid', sans-serif;
+        font-size: 0.8rem;
+    }
+
+    .footer-container iframe {
+        width: 20vw;
+        height: 15vh;
+        border-radius: 12px;
+        padding-left: 25px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .adress-container h3 {
+        font-size: 1rem;
+    }
+
+    .navbar-container ul li a {
+        font-size: 1rem;
+
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .sidebar img {
+        width: 5vw;
+        height: auto;
+    }
+
+    .text-home {
+        margin-top: -52px;
+    }
+
+    .text-home h2 {
+        font-size: 1.2rem;
+    }
+
+    .adress-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .img-contain img {
+        width: 7vw;
+        height: auto;
+    }
+
+    .footer-container iframe {
+        width: 20vw;
+        height: 20vh;
+    }
+}
+
+/*Page d'erreur*/
+
+.erreur-type {
+    font-size: 7rem;
+    color: var(--main-color);
+    font-family: 'KGSecondChancesSolid', sans-serif;
+}
+
+.erreur-text {
+    font-size: 1.5rem;
+}
+
+/*Page admin*/
+.admin-link {
+    font-family: 'KGSecondChancesSolid', sans-serif;
+}
+
+.admin-link a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.admin-link a:focus {
+    color: var(--main-color);
+}
+
+
+.nav-link {
+    text-decoration: none;
+    color: grey;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: var(--main-color);
+}
+
+.active {
+    color: var(--second-color);
+    background-color: rgba(211, 211, 211, 0.25);
+    border-radius: 12px;
+}
+
+.active-side {
+    color: var(--second-color);
+    background-color: rgba(211, 211, 211, 0.25);
+}
+
+/* Formulaire d'annonce */
+
+#announcement_title:focus, #announcement_content:focus {
+    border: var(--third-color) !important;
+    box-shadow: 0 0 0 .25rem var(--form-focus) !important;
+    transition: all 0.5s ease-in-out !important;
+}
+

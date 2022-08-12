@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+/* Style des h2 de la page */
+h2 {
+    font-family: 'KGSecondChancesSolid', sans-serif;
+    color: var(--main-color);
+}
+
+/* Style Article */
+.article-margin {
+    margin-bottom: 3vh;
+}
+
+/* style des h6 */
+.article-style {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* style du texte */
+p {
+    margin: 0;
+}
+
+span {
+    font-weight: bold;
+}
+
+.text-margin {
+    margin-top: 2vh;
+}

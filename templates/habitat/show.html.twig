@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ habitat.title }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/view-habitat.css') }}">
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        {# Section Titre de la page #}
+        <div class="row">
+            <h1 class="text-center my-3">{{ habitat.title }}</h1>
+        </div>
+
+        {# Slogan de la page #}
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 my-3">
+                <h3 class="text-center h3-texte-style">{{ habitat.description }}</h3>
+            </div>
+        </div>
+
+        {# Carousel d'image #}
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 my-2">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+
+                        {# Affichage de l'image de couverture dans le carousel #}
+                        <div class="carousel-item active" data-bs-interval="15000">
+                            <img src="{{ asset('images/uploads/' ~ habitat.coverImage) }}"
+                                 class="d-block img-fluid img-style" alt="...">
+
+
+                        </div>
+
+                        {# Affichage des images qui montre les habitations dans le carousel #}
+                        {% for image in habitat.habitatImages %}
+                            <div class="carousel-item" data-bs-interval="10000">
+                                <img src=" {{ asset('/images/uploads/' ~ image.name) }} "
+                                     class="d-block img-fluid img-style" alt="images habitations">
+
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {# Bouton precedent du carousel #}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon test" aria-hidden="true"></span>
+                        <span class="visually-hidden">Précédent</span>
+                    </button>
+
+                    {# Bouton suivant du carousel #}
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Suivant</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        {# Section pour les nombre de personne de la chambre #}
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 text-center places-text-styles my-3">
+                <strong>{{ habitat.places }}</strong>
+            </div>
+        </div>
+
+        {# Section du contenue de l'habitation avec un sécurité XSS avec purify #}
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                <div>
+                    {{ habitat.content|purify }}
+                </div>
+            </div>
+        </div>
+
+        {# Affichage ecriture photo #}
+        <div class="row">
+            <h2 class="text-center my-4">Photo</h2>
+        </div>
+
+
+        {# Affichage des images #}
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 my-3">
+                <div class="position-style">
+                    {% for image in habitat.habitatImages %}
+                        <div>
+                            <img src="{{ asset('/images/uploads/' ~ image.name) }}" alt="Image" class="img-fluid">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {# Section bouton #}
+        <div class="row">
+            <div class="d-flex my-3">
+
+                <a href="{{ path('app_habitat_index') }}" class="btn btn-back">Retour à la liste</a>
+
+                {# Bouton Admin uniquement #}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_habitat_edit', {'id': habitat.id}) }}"
+                       class="btn btn-validate mx-2">Modifier</a>
+
+                    {{ include('habitat/_delete_form.html.twig') }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+{% endblock %}
+

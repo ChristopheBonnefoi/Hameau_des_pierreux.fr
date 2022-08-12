@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Habitat{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/edit-habitat.css') }}">
+
+    <style type="text/css">
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid" onload="getData();">
+
+        {# Titre de la page #}
+        <div class="row">
+            <div class="text-center my-4">
+                <h1>Edition d'espace</h1>
+            </div>
+        </div>
+
+        {# Bouton de suppression de l'habitation #}
+        <div class="row text-center">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+                {{ include('habitat/_delete_form.html.twig') }}
+            </div>
+        </div>
+
+        {# Fomulaire de l'habitation #}
+        <div class="row">
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 ">
+                {{ form_start(edit_habitat_form) }}
+
+                {{ form_errors(edit_habitat_form) }}
+
+                {{ form_row(edit_habitat_form.title) }}
+
+                {{ form_row(edit_habitat_form.description) }}
+
+                {{ form_row(edit_habitat_form.places) }}
+
+                {{ form_row(edit_habitat_form.content) }}
+
+                {{ form_row(edit_habitat_form.coverImage) }}
+
+                {{ form_row(edit_habitat_form.images) }}
+                <p class="text_p_style">Fichier d'une taille de 1920 x 1080 et d'un poids de 10 Mo maximum</p>
+
+
+                {# Vérifier si la route est la route d'édition et on affiche les image #}
+                {% if app.request.attributes.get('_route') == 'app_habitat_edit' %}
+                    <h3 class="text-center">Photos</h3>
+
+                    {# Affichage des images #}
+                    <div class="d-flex flex-wrap justify-content-around">
+                        {% for image in habitat.habitatImages %}
+                            <div class="card-style mx-3 my-3">
+                                <img src="{{ asset('/images/uploads/' ~ image.name) }}" alt="Image"
+                                     class="img-fluid img-style-form">
+                                <a href="{{ path('habitat_delete_image', {id: image.id}) }}" data-delete
+                                   data-token="{{ csrf_token('delete' ~image.id) }}"
+                                   class="btn btn-delete">Supprimer</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {# Bouton sauvegarde #}
+                <button class="btn btn-validate">{{ button_label|default('Sauvegarder') }}</button>
+                {# Bouton de retour en arriere #}
+                <a href="{{ path('app_habitat_index') }}" class="btn btn-back">Retour à la liste</a>
+                <div class="my-3"></div>
+                {{ form_end(edit_habitat_form) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+ {# Inclusion du fichier JS lier à la page #}
+{% block javascripts %}
+    <script src="{{ asset('js/habitatImages.js') }}"></script>
+
+{% endblock %}

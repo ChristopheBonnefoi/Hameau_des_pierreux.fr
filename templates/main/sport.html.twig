@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/sport_activity_partner.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Le Hameau des Pierreux - Activités Sportives{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        {# Section Titre plus slogan de la page #}
+        <div class="row">
+            <h1 class="text-center">Activités Sportives</h1>
+            <h3 class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3 mx-auto text-center">Nous pouvons
+                prendre les réservations de vos activités. Il suffit de nous donner le nombre de participants, et
+                l’horaire souhaité.</h3>
+        </div>
+
+        {# Premier partenaire sportif #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.abloisirs.com/nos-activites/?gclid=EAIaIQobChMIv6fa__WD6gIVAofVCh2cfgmZEAAYASAAEgKEovD_BwE"
+                               target="_blank">
+                                <img src="{{ asset('images/sport_ab_loisirs.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.abloisirs.com/nos-activites/?gclid=EAIaIQobChMIv6fa__WD6gIVAofVCh2cfgmZEAAYASAAEgKEovD_BwE"
+                               target="_blank">
+                                <p class="text-style-link">AB Loisirs à Saint Père : </p>
+                            </a>
+                            <p><span>Activités :</span> Rafting, canoë, accrobranche, tir à l’arc, karting, VTT,
+                                spéléologie, vol en montgolfière.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Deuxieme partenaire sportif #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://an-rafting.com/activites-morvan/" target="_blank">
+                                <img src="{{ asset('images/sport_an_rafting.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://an-rafting.com/activites-morvan/" target="_blank">
+                                <p class="text-style-link style-padding">AN Rafting à Plainefas : </p>
+                            </a>
+                            <p class="style-padding"><span>Activités :</span> Rafting, hydrospeed, canoë, paintball.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Troisieme partenaire sportif #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.aventure-en-bourgogne.com/" target="_blank">
+                                <img src="{{ asset('images/sport_bourgogne_sensation.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.aventure-en-bourgogne.com/" target="_blank">
+                                <p class="text-style-link">Bourgogne Sensations à la grotte de Champ Retard : </p>
+                            </a>
+                            <p><span>Activités :</span> parcours aventure sur rocher, course d’orientation, tir sur
+                                cible, paintball, chasse au trésor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Hameau des Pierreux - Conditions générales d'utilisation{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cgu.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        {# Titre H1 de la page #}
+        <div class="row">
+            <div class="text-center my-4">
+                <h1>Politique de Confidentialité</h1>
+            </div>
+        </div>
+
+        {# Section des Avis Clients #}
+
+        {# Article #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+
+                {# Cookies #}
+                <div class="article-margin">
+                    <h3 class="article-style">Cookies</h3>
+                    <p>Pour assurer le bon fonctionnement de ce site, nous devons parfois enregistrer de petits fichiers de données sur l’équipement de nos utilisateurs. La plupart des grands sites web font de même.</p>
+                    <h5 class="mt-3 article-style">Qu’est-ce qu’un cookie?</h5>
+                    <p>Un cookie est un petit fichier stocké par un serveur dans le terminal (ordinateur, téléphone, etc.) d’un utilisateur et associé à un domaine web (c'est-à-dire dans la majorité des cas à l’ensemble des pages d’un même site web).  Ce fichier est automatiquement renvoyé lors de contacts ultérieurs avec le même domaine.</p>
+                    <p class="mt-2">Les cookies ont de multiples usages : ils peuvent servir à mémoriser votre identifiant client auprès d'un site marchand, le contenu courant de votre panier d'achat, la langue d’affichage de la page web, un identifiant permettant de tracer votre navigation à des fins statistiques ou publicitaires, etc. Certains de ces usages sont strictement nécessaires aux fonctionnalités expressément demandées par l’utilisateur ou bien à l’établissement de la communication et donc exemptés de consentement. D’autres, qui ne correspondent pas à ces critères, nécessitent un consentement de l’utilisateur avant lecture ou écriture.</p>
+                    <h5 class="mt-3 article-style">Liste des cookies générés par ce site</h5>
+                    <p><strong>PHPSESSID :</strong> Ce cookie technique, indispensable, sert à optimiser l'expérience des visiteurs.</p>
+                    <p>Il n'y a pas d'autres cookies sur ce site</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

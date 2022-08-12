@@ -1,0 +1,280 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/sport_activity_partner.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Le Hameau des Pierreux - Partenaires Locaux{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        {# Section Titre plus slogan de la page #}
+        <div class="row">
+            <h1 class="text-center">Partenaires locaux</h1>
+            <h3 class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3 mx-auto text-center">Voici la liste de
+                nos partenaires locaux</h3>
+        </div>
+
+        {# Premier partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.facebook.com/lesjardinsdubasilic/" target="_blank">
+                                <img src="{{ asset('images/logo Les jardins du basilic.png') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.facebook.com/lesjardinsdubasilic/" target="_blank">
+                                <p class="text-style-link">Les jardins du Basilic : </p>
+                            </a>
+                            <p>Le GAEC Les Jardins du Basilic est une exploitation maraîchère située à Saint Père aux
+                                portes du Morvan et au pied de la Basilique de Vézelay. L&#39;équipe propose une grande
+                                diversité de légumes biologiques de saison.</p>
+                            <a href="https://www.facebook.com/lesjardinsdubasilic/" target="_blank">Page Facebook</a>
+                            <p>Tél :<a href="tel:+33695837974"> 06.95.83.79.74</a></p>
+                            <p>Email : <a href="mailto: jardinsdubasilic@gmail.com">jardinsdubasilic@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Deuxieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.facebook.com/LesBrebisdePauline/" target="_blank">
+                                <img src="{{ asset('images/Logo Les brebis de Pauline.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.facebook.com/LesBrebisdePauline/" target="_blank">
+                                <p class="text-style-link style-padding">Les brebis de Pauline : </p>
+                            </a>
+                            <p class="style-padding">Les brebis de Pauline, c'est une petite ferme paysanne où il y fait
+                                bon vivre pour les
+                                brebis ! Des animaux dont le bien être est la priorité ne peuvent que donner du bon
+                                lait.
+                                Cela afin de faire des fromages et yaourts fermiers qui ont pour saveur toute
+                                l'authenticité d'un terroir et savoir-faire artisanal.</p>
+                            <a href="https://www.facebook.com/LesBrebisdePauline/" target="_blank"
+                               class="style-padding">Page Facebook</a>
+                            <p class="style-padding">Tél :<a href="tel:+33631221127"> 06.31.22.11.27</a></p>
+                            <p class="style-padding">Email : <a href="mailto: lesbrebisdepauline@gmail.com">lesbrebisdepauline@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Troisieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3 justify-content-end">
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <p class="text-style-link partner d-flex justify-content-end">Les chèvres Duprey : </p>
+                            <p class="d-flex justify-content-end">Julie élève ses chèvres sur la commune de
+                                Montréal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Quatrieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.facebook.com/Lecochondemontgre/" target="_blank">
+                                <img src="{{ asset('images/Logo Cochon de Montgré.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.facebook.com/Lecochondemontgre/" target="_blank">
+                                <p class="text-style-link style-padding">Le cochon de Montgré : </p>
+                            </a>
+                            <p class="style-padding">Certifié en Agriculture Biologique, la ferme se situe sur les
+                                plateaux de Bourgogne.
+                                L'élevage des truies est conduit au pré toute l'année, les porcelets naissent dans des
+                                abris dehors ce qui leur assure vitalité et santé. Ils ne sont séparés de leurs mères
+                                qu'à
+                                l'âge de 7 semaines, lorsque la production de lait de la truie diminue. Les cochons sont
+                                engraissés dans les bois, sous les chênes, se nourrissant de glands, racines, feuilles
+                                tiges
+                                et de farine bio fabriquée par leurs soins pour compléter la ration.</p>
+                            <a href="https://www.facebook.com/Lecochondemontgre/" target="_blank" class="style-padding">Page
+                                Facebook</a>
+                            <p class="style-padding">Tél :<a href="tel:+33682102856"> 06.82.10.28.56</a></p>
+                            <p class="style-padding">Email : <a href="mailto: nmarquant@yahoo.fr">nmarquant@yahoo.fr</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Cinquieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.lafermeduserein.fr/" target="_blank">
+                                <img src="{{ asset('images/logo Ferme du serein.png') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.lafermeduserein.fr/" target="_blank">
+                                <p class="text-style-link">La ferme du Serein : </p>
+                            </a>
+                            <p>Spécialisée dans la culture de céréales et de légumes ainsi que dans l’élevage de bœuf et
+                                de génisse, de différentes races, notamment la Charolaise, l’Angus, l’Aubrac et
+                                l’Hereford.
+                                Les animaux sont élevés localement et la viande est transformée à 10 km de la ferme.</p>
+                            <a href="https://www.lafermeduserein.fr/" target="_blank">Site Internet</a>
+                            <p>Tél :<a href="tel:+33613210791"> 06.13.21.07.91</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Sixieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <img src="{{ asset('images/logo canards Angély.png') }}" alt="..."
+                                 class="img-fluid img-style-all">
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <p class="text-style-link style-padding partner">La ferme aux canards : </p>
+                            <p class="style-padding">Adeline et Emmanuel élèvent dans leurs prés une centaine de
+                                canards, qui sont ensuite
+                                gavés au maïs grain produit localement. Le temps du gavage, ils sont sur un lit de
+                                paille
+                                propre, avec de l'espace.</p>
+                            <p class="style-padding">Tél :<a href="tel:+33607374293"> 06.07.37.42.93</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Septieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3 justify-content-end">
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <p class="text-style-link partner d-flex justify-content-end">Ferme de la côte au duc : </p>
+                            <p class="d-flex justify-content-end text-end">Marie-Cécile et Yannick élèvent poulets,
+                                pintades, lapins en plein air. Les animaux sont
+                                nourris avec les céréales poussant sur la ferme.</p>
+                            <p class="d-flex justify-content-end">Tél :<a href="tel:+33678797049"> 06.78.79.70.49</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Huitieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+
+                            <a class="d-flex justify-content-end" href="https://www.grivot-goisot.com/fr/notre-domaine/"
+                               target="_blank">
+                                <img src="{{ asset('images/Logo Grivot-Goisot.png') }}" alt="..."
+                                     class="img-fluid img-style-all my-2">
+                            </a>
+                            <a class="d-flex justify-content-end" href="https://www.grivot-goisot.com/fr/notre-domaine/"
+                               target="_blank">
+                                <img src="{{ asset('images/Logo bières Maddam noir Vecto_02_BlocMarque-B.png') }}"
+                                     alt="..." class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.grivot-goisot.com/fr/notre-domaine/" target="_blank">
+                                <p class="text-style-link style-padding">Domaine GRIVOT-GOISOT : </p>
+                            </a>
+                            <p class="style-padding">Situé au cœur du vignoble Auxerrois, à Saint Bris Le Vineux, en
+                                bourgogne, le domaine GRIVOT-GOISOT,
+                                propriétaire récoltant, exploite à ce jour 27,5 Hectares sous le Label "Haute Valeur
+                                Environnementale". Le
+                                Domaine est très souvent primé pour la qualité de ses vins (Saint-Bris Blanc, Crémant
+                                Bourgogne Blanc, Chablis
+                                Blanc, Chablis 1er Cru Blanc, Bourgogne Cote D'Auxerre Rouge, Bourgogne Cote D'Auxerre
+                                Rose).</p>
+                            <a href="https://www.grivot-goisot.com/fr/notre-domaine/" target="_blank"
+                               class="style-padding">Site internet</a>
+                            <p class="style-padding">Tél :<a href="tel:+33386533215"> 03.86.53.32.15</a></p>
+                            <p class="style-padding">Email : <a href="mailto: contact@grivot-goisot.com">contact@grivot-goisot.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Section des souteneurs #}
+        <div class="row">
+            <h5 class="my-3">Les gîtes du Hameau des Pierreux ont été soutenus par : </h5>
+            <div class="row">
+                <div class="text-center my-2">
+                    {# Logo 1 #}
+                    <a href="https://www.bourgognefranchecomte.com/" target="_blank">
+                        <img src="{{ asset('images/BFC-tourisme.png') }}" alt="..." class="img-fluid mx-3">
+                    </a>
+                    {# Logo 2 #}
+                    <a href="https://www.ccduserein.fr/" target="_blank">
+                        <img src="{{ asset('images/communaute-communes-du-serein-e1526559506387.png') }}" alt="..."
+                             class="img-fluid mx-3">
+                    </a>
+                    {# Logo 3 #}
+                    <a href="https://www.tourisme-yonne.com/" target="_blank">
+                        <img src="{{ asset('images/logo-yonnetourisme.png') }}" alt="..." class="img-fluid mx-3">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

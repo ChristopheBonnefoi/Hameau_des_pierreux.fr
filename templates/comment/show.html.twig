@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/comment.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src:    url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Commentaires{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <h1 class=" col-12 col-lg-8 col-xl-6 text-center mb-5 mx-auto">Liste des commentaires</h1>
+        </div>
+
+        <div class="row">
+
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center">
+
+                {# Affichage du nombre total de commentaire #}
+                <div class="row">
+                        <p class="col-10 text-center mx-auto number-comment">Nombre total de commentaires : {{ comments.getTotalItemCount }} </p>
+                </div>
+
+                {# Affichage du menu de navigation, seulement s'il y a des commentaires #}
+                {% if comments is not empty %}
+
+                    <div class="row">
+
+                        <div class="col-12 my-3 text-center">
+
+                            <div class="d-inline-block">
+                                {{ knp_pagination_render(comments) }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    {# Bouton navigation page admin des commmentaires #}
+                        <button class="btn btn-back bouton-link-comment"><a href="{{ path('app_comment_index') }}">Page administration des commentaires</a></button>
+                {% endif %}
+
+                {# Bouton ajout de commentaire #}
+                <form method="post" action="{{ path('app_comment_new') }}" class="my-3">
+                    <button class="btn btn-validate">Ajouter un commentaire</button>
+                </form>
+
+                {% for comment in comments %}
+
+                    {% if comment.isPublished == 1 %}
+
+                        <div class="card my-5">
+                            <div class="card-body card-style-background">
+                                <div>
+                                    <p class="content">{{ comment.content|purify }}</p>
+                                    <div class="comment-footer card bg-light">
+                                        <p class="m-0 my-2"><i class="fa-solid fa-clock mx-2 text-success"></i><b>Publié le :</b>  {{ comment.publicationDate ? comment.publicationDate|date('d-m-Y à H:i:s') : '' }}</p>
+                                        <p class="m-0 my-2"><i class="fa-solid fa-user mx-2 text-success"></i><b>Auteur :</b>  {{ comment.author }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                {%  else %}
+
+                    <div class="row">
+                        <p class="col-12 text-center alert alert-warning">Aucune publications à afficher</p>
+                    </div>
+
+                {% endfor %}
+
+                {# Affichage du menu de navigation, seulement s'il y a des commentaires #}
+                {% if comments is not empty %}
+
+                    <div class="row">
+
+                        <div class="col-12 my-3 text-center">
+
+                            <div class="d-inline-block">
+                                {{ knp_pagination_render(comments) }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {#    TODO:  Commentaire à enlever à la fin#}
+        {#    <table class="table">#}
+        {#        <thead>#}
+        {#            <tr>#}
+        {#                <th>Id</th>#}
+        {#                <th>Content</th>#}
+        {#                <th>PublicationDate</th>#}
+        {#                <th>Author</th>#}
+        {#                <th>actions</th>#}
+        {#            </tr>#}
+        {#        </thead>#}
+        {#        <tbody>#}
+        {#        {% for comment in comments %}#}
+        {#            <tr>#}
+        {#                <td>{{ comment.id }}</td>#}
+        {#                <td>{{ comment.content }}</td>#}
+        {#                <td>{{ comment.publicationDate ? comment.publicationDate|date('Y-m-d H:i:s') : '' }}</td>#}
+        {#                <td>{{ comment.author }}</td>#}
+        {#                <td>#}
+        {#                    <a class="btn btn-validate" href="{{ path('app_comment_show', {'id': comment.id}) }}">Voir</a>#}
+        {#                    <a class="btn btn-back" href="{{ path('app_comment_edit', {'id': comment.id}) }}">Modifier</a>#}
+        {#                </td>#}
+        {#            </tr>#}
+        {#        {% else %}#}
+        {#            <tr>#}
+        {#                <td colspan="5">no records found</td>#}
+        {#            </tr>#}
+        {#        {% endfor %}#}
+        {#        </tbody>#}
+        {#    </table>#}
+
+        {#    <a href="{{ path('app_comment_new') }}">Create new</a>#}
+
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/comment.js') }}"></script>
+{% endblock %}

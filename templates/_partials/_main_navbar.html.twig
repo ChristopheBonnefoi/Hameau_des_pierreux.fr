@@ -1,0 +1,146 @@
+<div class="container-fluid">
+
+    <!-- HEADER -->
+    <div class="row header-container py-3">
+
+        <!-- LOGO -->
+        <div class="col-2 col-lg-1">
+            <a href="{{ path('main_home') }}">
+                <img src=" {{ asset('images/Logo.png') }} " alt="logo" class="img-fluid">
+            </a>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar-container col-8 col-md-8 col-lg-9 text-center m-0 p-0 d-none d-sm-none d-md-block">
+            <nav>
+                <ul class="m-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link{{ route == 'app_habitat_index' ? ' active' }}"
+                           href="{{ path('app_habitat_index') }}">Les espaces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{ route == 'app_prices_index' ? ' active' }}"
+                           href="{{ path('app_prices_index') }}">Les services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link{{ route == 'main_itineraire' ? ' active' }}"
+                           href="{{ path('main_itineraire') }}">Itinéraires</a>
+                    </li>
+
+                    {# Icône admin connecté #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_admin' ? ' active' }}" href="{{ path('main_admin') }}">
+                                <i class="fa-solid fa-circle-user"></i>
+                                Administration
+                            </a>
+                        </li>
+
+                        {# inclusion des notifiactions en attente dans la navbar #}
+                        {% include 'notification/index.html.twig' %}
+
+                    {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-light col-9 col-md-2 col-lg-2 px-4 sidebar d-flex justify-content-end">
+
+            <button class="navbar-toggler card-style-background" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                    aria-controls="offcanvasNavbar">
+                <span class="menu">Menu</span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <img src=" {{ asset('images/Logo_Le_hameau_des_Pierreux_RVB.png') }}" alt="logo">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Le Hameau des Pierreux</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 text-center">
+
+                        {# Icône admin connecté #}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="nav-item admin-sidebar">
+                                <a class="nav-link{{ route == 'main_admin' ? ' active-side' }}" aria-current="page"
+                                   href="{{ path('main_admin') }}">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                    Administration
+                                </a>
+                            </li>
+                            <hr class="dropdown-divider">
+                            <li class="nav-item admin-sidebar">
+                                <a class="nav-link{{ route == 'app_logout' ? ' active-side' }}" aria-current="page"
+                                   href="{{ path('app_logout') }}">
+                                    Déconnexion
+                                </a>
+                            </li>
+                            <hr class="dropdown-divider">
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_home' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('main_home') }}">Accueil</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'app_habitat_index' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('app_habitat_index') }}">Les espaces</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'app_prices_index' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('app_prices_index') }}">Les services</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_partner' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('main_partner') }}">Partenaires</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_culture' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('main_culture') }}">Culture</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_sport' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('main_sport') }}">Activités sportives</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'app_comment_show' ? ' active-side' }}" aria-current="page"
+                               href=" {{ path('app_comment_show') }}">Voir les avis / Laisser un avis</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_itineraire' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('main_itineraire') }}">Itinéraires</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li class="nav-item">
+                            <a class="nav-link{{ route == 'main_histoire' ? ' active-side' }}" aria-current="page"
+                               href="{{ path('main_histoire') }}">Histoire</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+    </div>
+
+    {# séparateur #}
+    <div class="row">
+        <div class="col-12 separateur"></div>
+    </div>
+
+    {% block javascripts %}
+    <script src="{{ asset('js/total-notifications.js') }}"></script>
+    {% endblock %}

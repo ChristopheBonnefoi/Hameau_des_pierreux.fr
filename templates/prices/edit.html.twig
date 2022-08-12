@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifications des tarifs{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-3">Modifications des tarifs</h1>
+
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
+
+            {{ include('prices/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
+            <a href="{{ path('app_prices_index') }}" class="btn btn-back my-2 ">Retour à la page service</a>
+        </div>
+    </div>
+
+{% endblock %}

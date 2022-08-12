@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle annonce{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-5">Créer une nouvelle annonce</h1>
+
+    <div class="row">
+
+        <div class="col-12 col-md-8 col-lg-6 text-center mx-auto py-3">
+
+            {{ include('announcement/_form.html.twig') }}
+
+            <form method="GET" action="{{ path('main_home') }}" class="my-3 text-center">
+                <button class="btn btn-back">Retour à la liste</button>
+            </form>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}

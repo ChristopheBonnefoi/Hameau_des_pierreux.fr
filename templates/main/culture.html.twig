@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/sport_activity_partner.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Le Hameau des Pierreux - Activités Culturelles{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        {# Section Titre plus slogan de la page #}
+        <div class="row">
+            <h1 class="text-center">Activités Culturelles</h1>
+            <h3 class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3 mx-auto text-center">Nous pouvons
+                prendre les réservations de vos activités. Il suffit de nous donner le nombre de participants, et
+                l’horaire souhaité.</h3>
+        </div>
+
+        {# Premier partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.grottes-arcy.net/" target="_blank">
+                                <img src="{{ asset('images/culture_grotte.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.grottes-arcy.net/" target="_blank">
+                                <p class="text-style-link">Grottes D'Arcy-Sur-Cure : </p>
+                            </a>
+                            <p>Les grottes d’Arcy sur Cure, haut lieu de la préhistoire avec des peintures datées de
+                                plus de 28 000 ans</p>
+                            <a href="https://www.grottes-arcy.net/" target="_blank">Site internet</a>
+                            <p>Tél :<a href="tel:+33386819063"> 03 86 81 90 63</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Deuxieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.guedelon.fr/fr" target="_blank">
+                                <img src="{{ asset('images/culture_guedelon.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.guedelon.fr/fr" target="_blank">
+                                <p class="text-style-link style-padding">Guédelon : </p>
+                            </a>
+                            <p class="style-padding">Guédelon, le château fort construit aujourd’hui avec les techniques
+                                et matériaux du moyen âge</p>
+                            <a href="https://www.guedelon.fr/fr" target="_blank" class="style-padding">Site internet</a>
+                            <p class="style-padding">Tél :<a href="tel:+33386456666"> 03 86 45 66 66</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Troisieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.destinationgrandvezelay.com/" target="_blank">
+                                <img src="{{ asset('images/culture_vezelay.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.destinationgrandvezelay.com/" target="_blank">
+                                <p class="text-style-link">Vézelay : </p>
+                            </a>
+                            <p>Vézelay, dont la colline et la basilique sont inscrites au Patrimoine de l’UNESCO</p>
+                            <a href="https://www.destinationgrandvezelay.com/" target="_blank">Office du tourisme</a>
+                            <p>Tél :<a href="tel:+33386332369"> 03 86 33 23 69</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Quatrieme partenaire culturel #}
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+                <div class="row">
+                    <div class="d-flex flex-column flex-md-row-reverse card-style-background my-3">
+                        {# Image avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-4">
+                            <a href="https://www.tourisme-serein.fr/" target="_blank">
+                                <img src="{{ asset('images/culture_noyers_sur_serein.jpg') }}" alt="..."
+                                     class="img-fluid img-style-all">
+                            </a>
+                        </div>
+                        {# Ecriture avec liens #}
+                        <div class="mx-1 my-2 col-12 col-md-6 col-xl-8">
+                            <a href="https://www.tourisme-serein.fr/" target="_blank">
+                                <p class="text-style-link style-padding">Noyers sur Serein : </p>
+                            </a>
+                            <p class="style-padding">Noyers sur Serein, cité médiévale classée parmi les plus beaux
+                                villages de France</p>
+                            <a href="https://www.tourisme-serein.fr/" target="_blank" class="style-padding">Office du
+                                tourisme</a>
+                            <p class="style-padding">Tél :<a href="tel:+33386826606"> 03 86 82 66 06</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

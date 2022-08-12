@@ -1,0 +1,7 @@
+/* Style des champs de formulaire */
+#inputEmail:focus,
+#inputPassword:focus {
+    border: var(--third-color) !important;
+    box-shadow: 0 0 0 .25rem var(--form-focus) !important;
+    transition: all 0.5s ease-in-out !important;
+}

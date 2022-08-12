@@ -1,0 +1,227 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('css/comment.css') }}">
+    <style>
+        @font-face {
+            font-family: 'KGSecondChancesSolid';
+            src: url({{asset('fonts/KGSecondChancesSolid.ttf')}}) format('opentype');
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Modération Commentaires{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <h1 class=" col-12 col-lg-8 col-xl-6 text-center mb-5 mx-auto">Liste des commentaires à modérer</h1>
+        </div>
+
+        {# Partie notification #}
+
+        <div class="row">
+
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center"
+                 id="parent-notification">
+
+                    {# condition qui affiche un bouton de suppression des notifications #}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <button class="btn btn-delete my-3" id="btn-notify">
+                                <a href="{{ path('app_comment_index') }}">Supprimer les notifications</a>
+                            </button>
+                        {% endif %}
+
+
+                {# Boucle d'affichage des notifications #}
+                {% for comment in comments %}
+
+                    {# Condition permettant l'affichage des notifications avec une valeur = à 1 en BDD #}
+                    {% if comment.notification == 1 %}
+                        <div class="card my-5" id="child-notification">
+                            <div class="card-body card-style-background">
+                                <div class="notification-container">
+                                    <div class="row">
+                                        <p class="col-1"></p>
+                                        <p class="m-0 col-10 text-center d-flex align-items-center justify-content-center ">Vous avez un nouveau commentaire</p>
+
+                                        {# Condition qui affiche une checkbox dans chaque notifications #}
+                                        {% if comment.notification == 1 %}
+                                            <div class="form-check p-0 m-0 mx-auto my-2 text-center col-1 d-flex align-items-center">
+                                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                                <input class="form-check-input text-center m-0" type="radio"
+                                                       id="flexSwitchCheckChecked" data-id="{{ comment.id }}">
+                                            </div>
+                                        {% else %}
+                                            <div class="form-check p-0 m-0 mx-auto my-2 text-center col-1 d-flex align-items-center">
+                                                <input class="form-check-input text-center m-0" type="radio"
+                                                       id="flexSwitchCheckChecked" checked data-id="{{ comment.id }}">
+                                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                            </div>
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+        {# Pagination #}
+        <div class="row">
+
+            <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mx-auto text-center">
+
+                {# Affichage du nombre total de commentaire #}
+                <div class="row">
+                    <p class="col-10 text-center mx-auto">Nombre total de commentaires
+                        : {{ comments.getTotalItemCount }}</p>
+                </div>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    {# Bouton navigation page admin des commmentaires #}
+                    <button class="btn btn-back bouton-link-comment my-3"><a href="{{ path('app_comment_show') }}">Page
+                            des commentaires</a></button>
+                {% endif %}
+
+                {# Affichage du menu de navigation, seulement s'il y a des commentaires #}
+                {% if comments is not empty %}
+                    <div class="row">
+                        <div class="col-12 my-3 text-center">
+                            <div class="d-inline-block">
+                                {{ knp_pagination_render(comments) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {# Partie commentaire #}
+
+                {% for comment in comments %}
+                    <div class="card my-5">
+                        <div class="card-body card-style-background">
+                            <div>
+                                <p class="content">{{ comment.content|purify }}</p>
+
+                                <div class="comment-footer card bg-light">
+                                    <p class="m-0 my-2"><i class="fa-solid fa-clock mx-2 text-success"></i><b>Publié le
+                                            :</b> {{ comment.publicationDate ? comment.publicationDate|date('d-m-Y à H:i:s') : '' }}
+                                    </p>
+                                    <p class="m-0 my-2"><i class="fa-solid fa-user mx-2 text-success"></i><b>Auteur
+                                            :</b> {{ comment.author }}</p>
+                                </div>
+                            </div>
+
+                            {# section validation de commentaire #}
+
+                            <div class="validation-container text-center mx-auto col-11 mt-2">
+
+                                <div class="switch-text mx-2">Non Visible</div>
+
+                                {% if comment.isPublished == 0 %}
+                                    <div class="form-check form-switch p-0 m-0 text-center">
+                                        <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                        <input class="form-check-input text-center m-0" type="checkbox"
+                                               id="flexSwitchCheckChecked" data-id="{{ comment.id }}">
+                                    </div>
+                                {% else %}
+                                    <div class="form-check form-switch p-0 m-0 text-center">
+                                        <input class="form-check-input text-center m-0" type="checkbox"
+                                               id="flexSwitchCheckChecked" checked data-id="{{ comment.id }}">
+                                        <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                    </div>
+                                {% endif %}
+
+                                <div class="switch-text mx-2">Visible</div>
+
+                            </div>
+
+                            {# Bouton suppression de commentaire #}
+
+                            {#                            <form method="post" action="{{ path('app_comment_delete', {'id': comment.id}) }}" onsubmit="return confirm('Êtes-vous sûr de bien vouloir supprimer cet élément ?');"> #}
+                            {#                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}"> #}
+                            {#                                <button class="btn btn-delete my-3">Supprimer</button> #}
+                            {#                            </form> #}
+
+                        </div>
+
+                    </div>
+
+                {% else %}
+
+                    <div class="row">
+                        <p class="col-12 text-center alert alert-warning">Aucune publications à afficher</p>
+                    </div>
+
+                {% endfor %}
+
+
+
+                {# Affichage du menu de navigation, seulement s'il y a des commentaires #}
+                {% if comments is not empty %}
+
+                    <div class="row">
+
+                        <div class="col-12 my-3 text-center">
+
+                            <div class="d-inline-block">
+                                {{ knp_pagination_render(comments) }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {#    TODO:  Commentaire à enlever à la fin #}
+        {#    <table class="table"> #}
+        {#        <thead> #}
+        {#            <tr> #}
+        {#                <th>Id</th> #}
+        {#                <th>Content</th> #}
+        {#                <th>PublicationDate</th> #}
+        {#                <th>Author</th> #}
+        {#                <th>actions</th> #}
+        {#            </tr> #}
+        {#        </thead> #}
+        {#        <tbody> #}
+        {#        {% for comment in comments %} #}
+        {#            <tr> #}
+        {#                <td>{{ comment.id }}</td> #}
+        {#                <td>{{ comment.content }}</td> #}
+        {#                <td>{{ comment.publicationDate ? comment.publicationDate|date('Y-m-d H:i:s') : '' }}</td> #}
+        {#                <td>{{ comment.author }}</td> #}
+        {#                <td> #}
+        {#                    <a class="btn btn-validate" href="{{ path('app_comment_show', {'id': comment.id}) }}">Voir</a> #}
+        {#                    <a class="btn btn-back" href="{{ path('app_comment_edit', {'id': comment.id}) }}">Modifier</a> #}
+        {#                </td> #}
+        {#            </tr> #}
+        {#        {% else %} #}
+        {#            <tr> #}
+        {#                <td colspan="5">no records found</td> #}
+        {#            </tr> #}
+        {#        {% endfor %} #}
+        {#        </tbody> #}
+        {#    </table> #}
+
+        {#    <a href="{{ path('app_comment_new') }}">Create new</a> #}
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/comment.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{{ form_start(habitat_form) }}
+
+{{ form_errors(habitat_form) }}
+
+{{ form_row(habitat_form.title) }}
+
+{{ form_row(habitat_form.description) }}
+
+{{ form_row(habitat_form.places) }}
+
+{{ form_row(habitat_form.content) }}
+
+{{ form_row(habitat_form.coverImage) }}
+
+{{ form_row(habitat_form.images) }}
+<p class="text_p_style">Fichier d'une taille de 1920 x 1080 et d'un poids de 10 Mo maximum</p>
+
+{# Bouton sauvegarde #}
+<button class="btn btn-validate">{{ button_label|default('Sauvegarder') }}</button>
+{# Bouton de retour en arriere #}
+<a href="{{ path('app_habitat_index') }}" class="btn btn-back">Retour à la liste</a>
+<div class="my-3"></div>
+{{ form_end(habitat_form) }}
+
+
